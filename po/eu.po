@@ -736,3 +736,15 @@ msgstr "Presio-atalasea"
 
 #~ msgid "Show favorite applications"
 #~ msgstr "Erakutsi gogoko aplikazioak"
+
+#: Settings.ui
+msgid "Magnify icons on hover"
+msgstr "Handitu ikonoak gainetik pasatzean"
+
+#: Settings.ui
+msgid "Enlarge the icons under the mouse pointer, like the macOS dock."
+msgstr "Handitu saguaren erakuslearen azpiko ikonoak, macOS-eko atrakagunean bezala."
+
+#: Settings.ui
+msgid "Magnification size"
+msgstr "Handitzearen tamaina"

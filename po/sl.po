@@ -679,3 +679,15 @@ msgstr "Časovni zamik prikaza [s]"
 #: Settings.ui.h:130
 msgid "Pressure threshold"
 msgstr "Prag pritiska"
+
+#: Settings.ui
+msgid "Magnify icons on hover"
+msgstr "Povečaj ikone ob prehodu z miško"
+
+#: Settings.ui
+msgid "Enlarge the icons under the mouse pointer, like the macOS dock."
+msgstr "Poveča ikone pod kazalcem miške, kot v sidrišču macOS."
+
+#: Settings.ui
+msgid "Magnification size"
+msgstr "Velikost povečave"

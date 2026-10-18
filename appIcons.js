@@ -1602,11 +1602,20 @@ export function itemShowLabel() {
     this.label.opacity = 0;
     this.label.show();
 
-    const [stageX, stageY] = this.get_transformed_position();
+    let [stageX, stageY] = this.get_transformed_position();
     const node = this.label.get_theme_node();
 
-    const itemWidth  = this.allocation.x2 - this.allocation.x1;
-    const itemHeight = this.allocation.y2 - this.allocation.y1;
+    let itemWidth  = this.allocation.x2 - this.allocation.x1;
+    let itemHeight = this.allocation.y2 - this.allocation.y1;
+
+    // Place the label next to the icon even when it is magnified on hover
+    if (this.child && this.child.scale_x !== 1) {
+        const extents = this.child.get_transformed_extents();
+        stageX = extents.get_x();
+        stageY = extents.get_y();
+        itemWidth = extents.get_width();
+        itemHeight = extents.get_height();
+    }
 
     const labelWidth = this.label.get_width();
     const labelHeight = this.label.get_height();
@@ -1621,7 +1630,7 @@ export function itemShowLabel() {
         yOffset = Math.floor((itemHeight - labelHeight) / 2);
         y = stageY + yOffset;
         xOffset = labelOffset;
-        x = stageX + this.get_width() + xOffset;
+        x = stageX + itemWidth + xOffset;
         break;
     case St.Side.RIGHT:
         yOffset = Math.floor((itemHeight - labelHeight) / 2);

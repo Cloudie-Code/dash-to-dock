@@ -504,3 +504,15 @@ msgstr "Visningslengde (s)"
 #: Settings.ui.h:106
 msgid "Pressure threshold"
 msgstr "Trykkterskel"
+
+#: Settings.ui
+msgid "Magnify icons on hover"
+msgstr "Forstørr ikoner ved peking"
+
+#: Settings.ui
+msgid "Enlarge the icons under the mouse pointer, like the macOS dock."
+msgstr "Forstørr ikonene under musepekeren, som i macOS-docken."
+
+#: Settings.ui
+msgid "Magnification size"
+msgstr "Forstørrelsesgrad"

@@ -829,3 +829,15 @@ msgstr "Мяжа ціску"
 
 #~ msgid "Shrink the dash size by reducing padding"
 #~ msgstr "Паменшыць док празь зьмяншэньне водступаў"
+
+#: Settings.ui
+msgid "Magnify icons on hover"
+msgstr "Павелічэнне значкоў пры навядзенні"
+
+#: Settings.ui
+msgid "Enlarge the icons under the mouse pointer, like the macOS dock."
+msgstr "Павялічваць значкі пад указальнікам мышы, як у доку macOS."
+
+#: Settings.ui
+msgid "Magnification size"
+msgstr "Памер павелічэння"

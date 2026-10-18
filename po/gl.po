@@ -436,3 +436,15 @@ msgstr "Tempo de aparición"
 #: Settings.ui.h:90
 msgid "Pressure threshold"
 msgstr "Límite de presión"
+
+#: Settings.ui
+msgid "Magnify icons on hover"
+msgstr "Ampliar as iconas ao pasar o rato"
+
+#: Settings.ui
+msgid "Enlarge the icons under the mouse pointer, like the macOS dock."
+msgstr "Agrandar as iconas baixo o punteiro do rato, como no dock de macOS."
+
+#: Settings.ui
+msgid "Magnification size"
+msgstr "Tamaño da ampliación"

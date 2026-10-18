@@ -660,3 +660,15 @@ msgstr "Drukwaarde"
 #~ msgstr ""
 #~ "Benutzerdefiniertes Theme verwenden (funktioniert nur mit dem Standard-"
 #~ "Adwaita-Theme)"
+
+#: Settings.ui
+msgid "Magnify icons on hover"
+msgstr "Pictogrammen vergroten bij aanwijzen"
+
+#: Settings.ui
+msgid "Enlarge the icons under the mouse pointer, like the macOS dock."
+msgstr "Vergroot de pictogrammen onder de muisaanwijzer, zoals het macOS-dock."
+
+#: Settings.ui
+msgid "Magnification size"
+msgstr "Vergrotingsgrootte"

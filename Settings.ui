@@ -448,6 +448,12 @@
     <property name="step-increment">0.050000000000000003</property>
     <property name="page-increment">0.25</property>
   </object>
+  <object class="GtkAdjustment" id="hover_zoom_adjustment">
+    <property name="lower">1.1</property>
+    <property name="upper">3.0</property>
+    <property name="step_increment">0.05</property>
+    <property name="page_increment">0.1</property>
+  </object>
   <object class="GtkAdjustment" id="icon_size_adjustment">
     <property name="lower">16</property>
     <property name="upper">128</property>
@@ -1795,6 +1801,116 @@
                                   <property name="column">1</property>
                                   <property name="row">0</property>
                                   <property name="row-span">2</property>
+                                </layout>
+                              </object>
+                            </child>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+                <child type="label_item">
+                  <placeholder/>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkFrame" id="hover_zoom_frame">
+                <property name="can_focus">0</property>
+                <property name="child">
+                  <object class="GtkListBox" id="hover_zoom_listbox">
+                    <property name="can_focus">0</property>
+                    <property name="selection_mode">none</property>
+                    <child>
+                      <object class="GtkListBoxRow" id="hover_zoom_listboxrow">
+                        <property name="child">
+                          <object class="GtkGrid" id="hover_zoom_grid">
+                            <property name="can_focus">0</property>
+                            <property name="margin_start">12</property>
+                            <property name="margin_end">12</property>
+                            <property name="margin_top">12</property>
+                            <property name="margin_bottom">12</property>
+                            <property name="column_spacing">32</property>
+                            <child>
+                              <object class="GtkLabel" id="hover_zoom_label">
+                                <property name="can_focus">0</property>
+                                <property name="hexpand">1</property>
+                                <property name="halign">start</property>
+                                <property name="label" translatable="yes">Magnify icons on hover</property>
+                                <property name="xalign">0</property>
+                                <layout>
+                                  <property name="column">0</property>
+                                  <property name="row">0</property>
+                                </layout>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="hover_zoom_description">
+                                <property name="can_focus">0</property>
+                                <property name="hexpand">1</property>
+                                <property name="halign">start</property>
+                                <property name="label" translatable="yes">Enlarge the icons under the mouse pointer, like the macOS dock.</property>
+                                <property name="wrap">1</property>
+                                <property name="xalign">0</property>
+                                <style>
+                                  <class name="dim-label"/>
+                                </style>
+                                <layout>
+                                  <property name="column">0</property>
+                                  <property name="row">1</property>
+                                </layout>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkSwitch" id="hover_zoom_switch">
+                                <property name="halign">end</property>
+                                <property name="valign">center</property>
+                                <layout>
+                                  <property name="column">1</property>
+                                  <property name="row">0</property>
+                                  <property name="row-span">2</property>
+                                </layout>
+                              </object>
+                            </child>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkListBoxRow" id="hover_zoom_scale_listboxrow">
+                        <property name="child">
+                          <object class="GtkGrid" id="hover_zoom_scale_grid">
+                            <property name="can_focus">0</property>
+                            <property name="margin_start">12</property>
+                            <property name="margin_end">12</property>
+                            <property name="margin_top">12</property>
+                            <property name="margin_bottom">12</property>
+                            <property name="column_spacing">32</property>
+                            <child>
+                              <object class="GtkLabel" id="hover_zoom_scale_label">
+                                <property name="can_focus">0</property>
+                                <property name="halign">start</property>
+                                <property name="label" translatable="yes">Magnification size</property>
+                                <property name="xalign">0</property>
+                                <layout>
+                                  <property name="column">0</property>
+                                  <property name="row">0</property>
+                                </layout>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkScale" id="hover_zoom_scale">
+                                <property name="hexpand">1</property>
+                                <property name="draw-value">1</property>
+                                <property name="adjustment">hover_zoom_adjustment</property>
+                                <property name="round_digits">2</property>
+                                <property name="digits">2</property>
+                                <property name="value_pos">right</property>
+                                <signal name="value-changed" handler="hover_zoom_scale_value_changed_cb" />
+                                <layout>
+                                  <property name="column">1</property>
+                                  <property name="row">0</property>
                                 </layout>
                               </object>
                             </child>

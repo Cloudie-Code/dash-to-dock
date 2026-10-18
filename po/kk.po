@@ -688,3 +688,15 @@ msgstr "Көрсету күту уақыты (с)"
 #: Settings.ui.h:131
 msgid "Pressure threshold"
 msgstr "Қысым табалдырығы"
+
+#: Settings.ui
+msgid "Magnify icons on hover"
+msgstr "Меңзерді апарғанда таңбашаларды үлкейту"
+
+#: Settings.ui
+msgid "Enlarge the icons under the mouse pointer, like the macOS dock."
+msgstr "macOS докындағыдай, тышқан меңзерінің астындағы таңбашаларды үлкейту."
+
+#: Settings.ui
+msgid "Magnification size"
+msgstr "Үлкейту өлшемі"

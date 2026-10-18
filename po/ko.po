@@ -713,3 +713,15 @@ msgstr "타임아웃 표시 (초)"
 #: Settings.ui.h:130
 msgid "Pressure threshold"
 msgstr "압력 임계값"
+
+#: Settings.ui
+msgid "Magnify icons on hover"
+msgstr "마우스를 올리면 아이콘 확대"
+
+#: Settings.ui
+msgid "Enlarge the icons under the mouse pointer, like the macOS dock."
+msgstr "macOS 독처럼 마우스 포인터 아래의 아이콘을 확대합니다."
+
+#: Settings.ui
+msgid "Magnification size"
+msgstr "확대 크기"

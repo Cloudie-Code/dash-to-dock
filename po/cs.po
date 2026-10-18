@@ -748,3 +748,15 @@ msgstr "Míra tlaku (px)"
 
 #~ msgid "Adaptive"
 #~ msgstr "Adaptivní"
+
+#: Settings.ui
+msgid "Magnify icons on hover"
+msgstr "Zvětšovat ikony při najetí myší"
+
+#: Settings.ui
+msgid "Enlarge the icons under the mouse pointer, like the macOS dock."
+msgstr "Zvětší ikony pod ukazatelem myši, podobně jako dok v macOS."
+
+#: Settings.ui
+msgid "Magnification size"
+msgstr "Míra zvětšení"

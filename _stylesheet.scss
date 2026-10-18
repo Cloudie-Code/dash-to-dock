@@ -517,3 +517,16 @@ $dock_style_modes: null, shrink, extended, extended-shrink;
         background-size: contain;
     }
 }
+
+// Icons are magnified on hover, so their hover and focused backgrounds are not needed
+#dashtodockContainer.hover-zoom #dash #dashtodockDashContainer .dash-item-container {
+    .app-well-app:hover,
+    .app-well-app.focused,
+    .overview-tile:hover,
+    .overview-tile.focused,
+    .show-apps:hover {
+        .overview-icon {
+            background-color: transparent;
+        }
+    }
+}

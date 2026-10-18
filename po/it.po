@@ -752,3 +752,15 @@ msgstr "Soglia pressione"
 
 #~ msgid "Adaptive"
 #~ msgstr "Adattivo"
+
+#: Settings.ui
+msgid "Magnify icons on hover"
+msgstr "Ingrandisci le icone al passaggio del mouse"
+
+#: Settings.ui
+msgid "Enlarge the icons under the mouse pointer, like the macOS dock."
+msgstr "Ingrandisce le icone sotto il puntatore del mouse, come nella dock di macOS."
+
+#: Settings.ui
+msgid "Magnification size"
+msgstr "Dimensione dell'ingrandimento"

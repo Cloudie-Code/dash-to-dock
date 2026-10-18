@@ -754,3 +754,15 @@ msgstr "Limiar de pressão"
 #: Settings.ui.h:122
 msgid "Show dock for urgent notifications"
 msgstr "Mostrar o dock para notificações urgentes"
+
+#: Settings.ui
+msgid "Magnify icons on hover"
+msgstr "Ampliar ícones ao passar o mouse"
+
+#: Settings.ui
+msgid "Enlarge the icons under the mouse pointer, like the macOS dock."
+msgstr "Aumenta os ícones sob o ponteiro do mouse, como no dock do macOS."
+
+#: Settings.ui
+msgid "Magnification size"
+msgstr "Tamanho da ampliação"

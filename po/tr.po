@@ -775,3 +775,15 @@ msgstr "Orta tık davranışını özelleştir"
 #: prefs.js:964
 msgid "Customize running indicators"
 msgstr "Çalışan göstergeleri özelleştir"
+
+#: Settings.ui
+msgid "Magnify icons on hover"
+msgstr "Üzerine gelindiğinde simgeleri büyüt"
+
+#: Settings.ui
+msgid "Enlarge the icons under the mouse pointer, like the macOS dock."
+msgstr "Fare imlecinin altındaki simgeleri macOS rıhtımı gibi büyütür."
+
+#: Settings.ui
+msgid "Magnification size"
+msgstr "Büyütme boyutu"

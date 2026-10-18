@@ -512,3 +512,15 @@ msgstr "Mostrar tempo limite (s)"
 #: Settings.ui.h:107
 msgid "Pressure threshold"
 msgstr "Limite de pressão"
+
+#: Settings.ui
+msgid "Magnify icons on hover"
+msgstr "Ampliar ícones ao passar o rato"
+
+#: Settings.ui
+msgid "Enlarge the icons under the mouse pointer, like the macOS dock."
+msgstr "Aumenta os ícones sob o ponteiro do rato, como no dock do macOS."
+
+#: Settings.ui
+msgid "Magnification size"
+msgstr "Tamanho da ampliação"

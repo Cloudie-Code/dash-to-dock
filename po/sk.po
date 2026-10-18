@@ -444,3 +444,15 @@ msgstr "Medza tlaku"
 
 #~ msgid "Switch workspace by scrolling on the dock"
 #~ msgstr "Prepínať pracovné priestory rolovaním na doku"
+
+#: Settings.ui
+msgid "Magnify icons on hover"
+msgstr "Zväčšovať ikony pri prejdení myšou"
+
+#: Settings.ui
+msgid "Enlarge the icons under the mouse pointer, like the macOS dock."
+msgstr "Zväčší ikony pod ukazovateľom myši, podobne ako dok v macOS."
+
+#: Settings.ui
+msgid "Magnification size"
+msgstr "Miera zväčšenia"

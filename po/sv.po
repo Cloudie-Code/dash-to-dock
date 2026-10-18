@@ -729,3 +729,15 @@ msgstr "Tröskelvärde för tryck"
 
 #~ msgid "Show favorite applications"
 #~ msgstr "Visa favoritprogram"
+
+#: Settings.ui
+msgid "Magnify icons on hover"
+msgstr "Förstora ikoner vid hovring"
+
+#: Settings.ui
+msgid "Enlarge the icons under the mouse pointer, like the macOS dock."
+msgstr "Förstora ikonerna under muspekaren, som i macOS-dockan."
+
+#: Settings.ui
+msgid "Magnification size"
+msgstr "Förstoringsgrad"

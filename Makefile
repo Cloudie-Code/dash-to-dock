@@ -16,6 +16,7 @@ EXTRA_MODULES = \
                 appIconIndicators.js \
                 dockStruts.js \
                 fileManager1API.js \
+                iconMagnifier.js \
                 imports.js \
                 launcherAPI.js \
                 locations.js \

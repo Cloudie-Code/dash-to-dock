@@ -729,3 +729,15 @@ msgstr "Затримка появи (сек.)"
 #: Settings.ui.h:131
 msgid "Pressure threshold"
 msgstr "Поріг притискання"
+
+#: Settings.ui
+msgid "Magnify icons on hover"
+msgstr "Збільшувати значки при наведенні"
+
+#: Settings.ui
+msgid "Enlarge the icons under the mouse pointer, like the macOS dock."
+msgstr "Збільшувати значки під вказівником миші, як у доку macOS."
+
+#: Settings.ui
+msgid "Magnification size"
+msgstr "Ступінь збільшення"

@@ -743,3 +743,15 @@ msgstr "Pragul de presiune"
 
 #~ msgid "0.000"
 #~ msgstr "0.000"
+
+#: Settings.ui
+msgid "Magnify icons on hover"
+msgstr "Mărește pictogramele la trecerea mausului"
+
+#: Settings.ui
+msgid "Enlarge the icons under the mouse pointer, like the macOS dock."
+msgstr "Mărește pictogramele de sub cursorul mausului, ca în dock-ul macOS."
+
+#: Settings.ui
+msgid "Magnification size"
+msgstr "Mărimea măririi"

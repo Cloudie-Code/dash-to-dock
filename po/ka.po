@@ -726,3 +726,15 @@ msgstr "ჩვენების დრო (წმ)"
 #: Settings.ui.h:131
 msgid "Pressure threshold"
 msgstr "დაწოლის ზღვარი"
+
+#: Settings.ui
+msgid "Magnify icons on hover"
+msgstr "ხატულების გადიდება მიტანისას"
+
+#: Settings.ui
+msgid "Enlarge the icons under the mouse pointer, like the macOS dock."
+msgstr "თაგუნას მაჩვენებლის ქვეშ მყოფი ხატულების გადიდება, როგორც macOS-ის დოკში."
+
+#: Settings.ui
+msgid "Magnification size"
+msgstr "გადიდების ზომა"

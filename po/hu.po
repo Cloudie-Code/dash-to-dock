@@ -673,3 +673,15 @@ msgstr "Megjelenítési időkorlát (mp)"
 #: Settings.ui.h:130
 msgid "Pressure threshold"
 msgstr "Nyomás küszöbszintje"
+
+#: Settings.ui
+msgid "Magnify icons on hover"
+msgstr "Ikonok nagyítása rámutatáskor"
+
+#: Settings.ui
+msgid "Enlarge the icons under the mouse pointer, like the macOS dock."
+msgstr "Az egérmutató alatti ikonok felnagyítása, mint a macOS dokkjában."
+
+#: Settings.ui
+msgid "Magnification size"
+msgstr "Nagyítás mértéke"

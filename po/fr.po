@@ -746,3 +746,15 @@ msgstr "Seuil de pression"
 
 #~ msgid "0.000"
 #~ msgstr "0.000"
+
+#: Settings.ui
+msgid "Magnify icons on hover"
+msgstr "Agrandir les icônes au survol"
+
+#: Settings.ui
+msgid "Enlarge the icons under the mouse pointer, like the macOS dock."
+msgstr "Agrandir les icônes sous le pointeur de la souris, comme le dock de macOS."
+
+#: Settings.ui
+msgid "Magnification size"
+msgstr "Taille de l’agrandissement"

@@ -668,3 +668,15 @@ msgstr "壓力閾值"
 
 #~ msgid "0.000"
 #~ msgstr "0.000"
+
+#: Settings.ui
+msgid "Magnify icons on hover"
+msgstr "滑鼠懸停時放大圖示"
+
+#: Settings.ui
+msgid "Enlarge the icons under the mouse pointer, like the macOS dock."
+msgstr "像 macOS Dock 一樣放大滑鼠指標下的圖示。"
+
+#: Settings.ui
+msgid "Magnification size"
+msgstr "放大倍率"

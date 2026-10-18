@@ -583,3 +583,15 @@ msgstr "表示までのタイムアウト (秒)"
 #: Settings.ui.h:108
 msgid "Pressure threshold"
 msgstr "押し込み量 (ピクセル)"
+
+#: Settings.ui
+msgid "Magnify icons on hover"
+msgstr "ホバー時にアイコンを拡大する"
+
+#: Settings.ui
+msgid "Enlarge the icons under the mouse pointer, like the macOS dock."
+msgstr "macOS の Dock のように、マウスポインター下のアイコンを拡大します。"
+
+#: Settings.ui
+msgid "Magnification size"
+msgstr "拡大サイズ"

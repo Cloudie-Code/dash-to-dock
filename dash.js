@@ -24,6 +24,7 @@ import {
 import {
     AppIcons,
     Docking,
+    IconMagnifier,
     Theming,
     Utils,
 } from './imports.js';
@@ -102,6 +103,30 @@ const DockDashIconsVerticalLayout = GObject.registerClass(
         }
     });
 
+/**
+ * Extend St.ScrollView
+ *
+ * - include the viewport children in the paint volume when they are allowed
+ *   to overflow the view (e.g. magnified icons), otherwise the offscreen
+ *   redirected dash would clip them.
+ */
+const DockDashScrollView = GObject.registerClass(
+class DockDashScrollView extends St.ScrollView {
+    vfunc_get_paint_volume(volume) {
+        if (!super.vfunc_get_paint_volume(volume))
+            return false;
+
+        const viewport = this.child;
+        if (!viewport || viewport.clip_to_view)
+            return true;
+
+        const viewportVolume = viewport.get_transformed_paint_volume(this);
+        if (viewportVolume)
+            volume.union(viewportVolume);
+
+        return true;
+    }
+});
 
 const baseIconSizes = [16, 22, 24, 32, 48, 64, 96, 128];
 
@@ -145,6 +170,8 @@ export const DockDash = GObject.registerClass({
         // Initialize icon variables and size
         super._init({
             name: 'dash',
+            // Required to receive the pointer events used by the icon magnifier
+            reactive: true,
             offscreen_redirect: Clutter.OffscreenRedirect.ALWAYS,
             layout_manager: new Clutter.BinLayout(),
         });
@@ -179,7 +206,7 @@ export const DockDash = GObject.registerClass({
             x_expand: !this._isHorizontal,
         });
 
-        this._scrollView = new St.ScrollView({
+        this._scrollView = new DockDashScrollView({
             name: 'dashtodockDashScrollview',
             hscrollbar_policy: this._isHorizontal ? St.PolicyType.EXTERNAL : St.PolicyType.NEVER,
             vscrollbar_policy: this._isHorizontal ?  St.PolicyType.NEVER : St.PolicyType.EXTERNAL,
@@ -270,6 +297,7 @@ export const DockDash = GObject.registerClass({
         this._appSystem = Shell.AppSystem.get_default();
 
         this.iconAnimator = new Docking.IconAnimator(this);
+        this._iconMagnifier = new IconMagnifier.IconMagnifier(this);
 
         this._signalsHandler.add([
             this._appSystem,
@@ -337,6 +365,7 @@ export const DockDash = GObject.registerClass({
 
     _onDestroy() {
         this.iconAnimator.destroy();
+        this._iconMagnifier.destroy();
 
         if (this._requiresVisibilityTimeout) {
             GLib.source_remove(this._requiresVisibilityTimeout);
@@ -356,14 +385,17 @@ export const DockDash = GObject.registerClass({
 
 
     _onItemDragBegin(...args) {
+        this._iconMagnifier.inhibited = true;
         return Dash.Dash.prototype._onItemDragBegin.call(this, ...args);
     }
 
     _onItemDragCancelled(...args) {
+        this._iconMagnifier.inhibited = false;
         return Dash.Dash.prototype._onItemDragCancelled.call(this, ...args);
     }
 
     _onItemDragEnd(...args) {
+        this._iconMagnifier.inhibited = false;
         return Dash.Dash.prototype._onItemDragEnd.call(this, ...args);
     }
 
@@ -634,6 +666,9 @@ export const DockDash = GObject.registerClass({
         Dash.Dash.prototype._itemMenuStateChanged.call(this, item, opened);
 
         if (opened) {
+            // The menu is positioned according to the icon, so restore its
+            // original geometry before it gets allocated.
+            this._iconMagnifier.reset(false);
             this.emit('menu-opened');
         } else {
             // I want to listen from outside when a menu is closed. I used to

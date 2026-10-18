@@ -448,3 +448,15 @@ msgstr "Ambang tekanan"
 
 #~ msgid "Switch workspace by scrolling on the dock"
 #~ msgstr "Cambia spazio di lavoro scorrendo sulla dock"
+
+#: Settings.ui
+msgid "Magnify icons on hover"
+msgstr "Perbesar ikon saat disorot"
+
+#: Settings.ui
+msgid "Enlarge the icons under the mouse pointer, like the macOS dock."
+msgstr "Perbesar ikon di bawah penunjuk tetikus, seperti dock macOS."
+
+#: Settings.ui
+msgid "Magnification size"
+msgstr "Ukuran pembesaran"

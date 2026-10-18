@@ -468,3 +468,15 @@ msgstr "Праг притиска"
 
 #~ msgid "Only consider windows of the focused application"
 #~ msgstr "Разматрај само прозор фокусираног програма"
+
+#: Settings.ui
+msgid "Magnify icons on hover"
+msgstr "Увећај иконице при преласку мишем"
+
+#: Settings.ui
+msgid "Enlarge the icons under the mouse pointer, like the macOS dock."
+msgstr "Увећава иконице испод показивача миша, као на macOS доку."
+
+#: Settings.ui
+msgid "Magnification size"
+msgstr "Величина увећања"

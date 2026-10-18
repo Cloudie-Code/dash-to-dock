@@ -750,3 +750,15 @@ msgstr "Opóźnienie wyświetlania (s)"
 #: Settings.ui:3094
 msgid "Pressure threshold"
 msgstr "Próg nacisku"
+
+#: Settings.ui
+msgid "Magnify icons on hover"
+msgstr "Powiększanie ikon po najechaniu"
+
+#: Settings.ui
+msgid "Enlarge the icons under the mouse pointer, like the macOS dock."
+msgstr "Powiększa ikony pod kursorem myszy, jak w doku systemu macOS."
+
+#: Settings.ui
+msgid "Magnification size"
+msgstr "Stopień powiększenia"

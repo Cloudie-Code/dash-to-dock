@@ -442,3 +442,15 @@ msgstr "Χρονικό όριο εμφάνισης"
 #: Settings.ui.h:90
 msgid "Pressure threshold"
 msgstr "Ελάχιστη πίεση"
+
+#: Settings.ui
+msgid "Magnify icons on hover"
+msgstr "Μεγέθυνση εικονιδίων κατά την αιώρηση"
+
+#: Settings.ui
+msgid "Enlarge the icons under the mouse pointer, like the macOS dock."
+msgstr "Μεγέθυνση των εικονιδίων κάτω από τον δείκτη του ποντικιού, όπως στο dock του macOS."
+
+#: Settings.ui
+msgid "Magnification size"
+msgstr "Μέγεθος μεγέθυνσης"

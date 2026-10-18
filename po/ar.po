@@ -805,3 +805,15 @@ msgstr "عتبة الضغط"
 
 #~ msgid "Only when in autohide"
 #~ msgstr "فقط عند الإخفاء التلقائي"
+
+#: Settings.ui
+msgid "Magnify icons on hover"
+msgstr "تكبير الأيقونات عند التمرير"
+
+#: Settings.ui
+msgid "Enlarge the icons under the mouse pointer, like the macOS dock."
+msgstr "تكبير الأيقونات الموجودة تحت مؤشر الفأرة، مثل رصيف macOS."
+
+#: Settings.ui
+msgid "Magnification size"
+msgstr "حجم التكبير"

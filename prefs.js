@@ -210,6 +210,7 @@ const DockSettings = GObject.registerClass({
         this._dock_size_timeout = 0;
         this._icon_size_timeout = 0;
         this._opacity_timeout = 0;
+        this._hover_zoom_timeout = 0;
 
         this._monitorsConfig = new MonitorsConfig();
         this._bindSettings();
@@ -229,6 +230,11 @@ const DockSettings = GObject.registerClass({
         if (this._opacity_timeout) {
             GLib.source_remove(this._opacity_timeout);
             delete this._opacity_timeout;
+        }
+
+        if (this._hover_zoom_timeout) {
+            GLib.source_remove(this._hover_zoom_timeout);
+            delete this._hover_zoom_timeout;
         }
     }
 
@@ -308,6 +314,18 @@ const DockSettings = GObject.registerClass({
 
     preview_size_scale_value_changed_cb(scale) {
         this._settings.set_double('preview-size-scale', scale.get_value());
+    }
+
+    hover_zoom_scale_value_changed_cb(scale) {
+        // Avoid settings the magnification continuously
+        if (this._hover_zoom_timeout > 0)
+            GLib.source_remove(this._hover_zoom_timeout);
+        this._hover_zoom_timeout = GLib.timeout_add(
+            GLib.PRIORITY_DEFAULT, SCALE_UPDATE_TIMEOUT, () => {
+                this._settings.set_double('hover-zoom-scale', scale.get_value());
+                this._hover_zoom_timeout = 0;
+                return GLib.SOURCE_REMOVE;
+            });
     }
 
     custom_opacity_scale_value_changed_cb(scale) {
@@ -796,6 +814,19 @@ const DockSettings = GObject.registerClass({
 
 
         // Behavior panel
+
+        this._settings.bind('hover-zoom',
+            this._builder.get_object('hover_zoom_switch'),
+            'active',
+            Gio.SettingsBindFlags.DEFAULT);
+        this._settings.bind('hover-zoom',
+            this._builder.get_object('hover_zoom_scale_listboxrow'),
+            'sensitive',
+            Gio.SettingsBindFlags.GET);
+        this._builder.get_object('hover_zoom_scale').set_value(
+            this._settings.get_double('hover-zoom-scale'));
+        this._builder.get_object('hover_zoom_scale').set_format_value_func(
+            (_, value) => `${value.toFixed(2)}×`);
 
         this._settings.bind('hot-keys',
             this._builder.get_object('hot_keys_switch'),

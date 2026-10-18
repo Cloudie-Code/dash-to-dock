@@ -279,3 +279,14 @@ msgstr "Неуспешно стартиране на „%s“"
 #~ msgid "Shrink the dash size by reducing padding"
 #~ msgstr "Свий размера на дока чрез намаляване на отстоянията"
 
+#: Settings.ui
+msgid "Magnify icons on hover"
+msgstr "Увеличаване на иконите при посочване"
+
+#: Settings.ui
+msgid "Enlarge the icons under the mouse pointer, like the macOS dock."
+msgstr "Уголемяване на иконите под показалеца на мишката, като в дока на macOS."
+
+#: Settings.ui
+msgid "Magnification size"
+msgstr "Размер на увеличението"

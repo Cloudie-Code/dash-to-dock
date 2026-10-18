@@ -32,6 +32,7 @@ import {
     DockDash,
     DesktopIconsIntegration,
     FileManager1API,
+    IconMagnifier,
     Intellihide,
     LauncherAPI,
     Locations,
@@ -129,6 +130,7 @@ const DashSlideContainer = GObject.registerClass({
         super._init(params);
 
         this._slideoutSize = 0; // minimum size when slided out
+        this._overflowSize = 0; // space allowed to the child to draw outside
         this.connect('notify::slide-x', () => this.queue_relayout());
 
         if (this.side === St.Side.TOP && DockManager.settings.dockFixed) {
@@ -183,8 +185,40 @@ const DashSlideContainer = GObject.registerClass({
 
         this.child.allocate(childBox);
 
-        this.child.set_clip(-childBox.x1, -childBox.y1,
-            -childBox.x1 + availWidth, -childBox.y1 + availHeight);
+        // Let the child overflow on every side but the screen edge one
+        const overflow = this._overflowSize;
+        const clip = {
+            x: -childBox.x1,
+            y: -childBox.y1,
+            width: -childBox.x1 + availWidth,
+            height: -childBox.y1 + availHeight,
+        };
+
+        if (overflow > 0) {
+            if (this.side === St.Side.TOP || this.side === St.Side.BOTTOM) {
+                clip.x -= overflow;
+                clip.width += 2 * overflow;
+                clip.height += overflow;
+                if (this.side === St.Side.BOTTOM)
+                    clip.y -= overflow;
+            } else {
+                clip.y -= overflow;
+                clip.height += 2 * overflow;
+                clip.width += overflow;
+                if (this.side === St.Side.RIGHT)
+                    clip.x -= overflow;
+            }
+        }
+
+        this.child.set_clip(clip.x, clip.y, clip.width, clip.height);
+    }
+
+    set overflowSize(size) {
+        if (this._overflowSize === size)
+            return;
+
+        this._overflowSize = size;
+        this.queue_relayout();
     }
 
     /**
@@ -336,6 +370,10 @@ const DockedDash = GObject.registerClass({
             () => this.updateDashVisibility(),
         ], [
             this.dash,
+            'icon-size-changed',
+            () => this._updateHoverZoom(),
+        ], [
+            this.dash,
             'menu-opened',
             () => {
                 this._onMenuOpened();
@@ -424,6 +462,7 @@ const DockedDash = GObject.registerClass({
         this.set_child(this._slider);
         this._slider.set_child(this._box);
         this._box.add_child(this.dash);
+        this._updateHoverZoom();
 
         // Delay operations that require the shell to be fully loaded and with
         // user theme applied.
@@ -613,6 +652,14 @@ const DockedDash = GObject.registerClass({
             () => {
                 this.dash.setIconSize(settings.dashMaxIconSize);
             },
+        ], [
+            settings,
+            'changed::hover-zoom',
+            () => this._updateHoverZoom(),
+        ], [
+            settings,
+            'changed::hover-zoom-scale',
+            () => this._updateHoverZoom(),
         ], [
             settings,
             'changed::icon-size-fixed',
@@ -903,6 +950,16 @@ const DockedDash = GObject.registerClass({
         delete this._menuOpened;
         this._box.sync_hover();
         this.updateDashVisibility();
+    }
+
+    _updateHoverZoom() {
+        if (DockManager.settings.hoverZoom)
+            this.add_style_class_name('hover-zoom');
+        else
+            this.remove_style_class_name('hover-zoom');
+
+        this._slider.overflowSize =
+            IconMagnifier.IconMagnifier.getOverflowSize(this.dash.iconSize);
     }
 
     _hoverChanged() {

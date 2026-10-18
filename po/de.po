@@ -747,3 +747,15 @@ msgstr "Stoßschwellenwert"
 
 #~ msgid "Add to Favorites"
 #~ msgstr "Zu Favoriten hinzufügen"
+
+#: Settings.ui
+msgid "Magnify icons on hover"
+msgstr "Symbole beim Überfahren vergrößern"
+
+#: Settings.ui
+msgid "Enlarge the icons under the mouse pointer, like the macOS dock."
+msgstr "Symbole unter dem Mauszeiger vergrößern, wie beim macOS-Dock."
+
+#: Settings.ui
+msgid "Magnification size"
+msgstr "Vergrößerungsstufe"

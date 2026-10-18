@@ -724,3 +724,15 @@ msgstr "Rādīšanas aizture (s)"
 #: Settings.ui.h:131
 msgid "Pressure threshold"
 msgstr "Spiediena slieksnis"
+
+#: Settings.ui
+msgid "Magnify icons on hover"
+msgstr "Palielināt ikonas, uzbraucot ar peli"
+
+#: Settings.ui
+msgid "Enlarge the icons under the mouse pointer, like the macOS dock."
+msgstr "Palielināt ikonas zem peles rādītāja, kā macOS dokā."
+
+#: Settings.ui
+msgid "Magnification size"
+msgstr "Palielinājuma lielums"

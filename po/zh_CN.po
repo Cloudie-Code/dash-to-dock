@@ -761,3 +761,15 @@ msgstr "固定到 Dock"
 
 #~ msgid "Only when in autohide"
 #~ msgstr "仅当自动隐藏时"
+
+#: Settings.ui
+msgid "Magnify icons on hover"
+msgstr "悬停时放大图标"
+
+#: Settings.ui
+msgid "Enlarge the icons under the mouse pointer, like the macOS dock."
+msgstr "像 macOS 程序坞一样放大鼠标指针下的图标。"
+
+#: Settings.ui
+msgid "Magnification size"
+msgstr "放大倍数"
